@@ -1,0 +1,8 @@
+// Endorsed Application Calculating Width / Height SASS Mixins
+@mixin calc($property, $expression) {
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: expression(#{$expression});
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -o-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}

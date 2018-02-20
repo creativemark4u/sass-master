@@ -1,0 +1,103 @@
+// Endorsed Application Global SASS Mixins
+// Link Colors
+@mixin link-colors ($link, $visited, $hover, $active) {
+    color: $link;
+    &:visited {
+        color: $visited;
+    }
+    &:hover {
+        color: $hover;
+    }
+    &:active {
+        color: $active;
+    }
+}
+
+// Font Size
+@mixin font-size($sizeValue: 12) {
+    font-size: $sizeValue + px; //fallback for old browsers
+    font-size: (0.125 * $sizeValue) + rem;
+}
+
+// Headings
+@mixin heading($fsize, $fcolor, $ftype) {
+    font-size: $fsize;
+    color: $fcolor;
+    font-weight: $ftype;
+}
+
+// Line Height
+@mixin line-height($heightValue: 12) {
+    line-height: $heightValue + px; //fallback for old browsers
+    line-height: (0.125 * $heightValue) + rem;
+}
+
+//Padding mixin
+@mixin padding($top: null, $right: null, $bottom: null, $left: null) {
+    padding-top: $top;
+    padding-right: $right;
+    padding-bottom: $bottom;
+    padding-left: $left;
+}
+
+@mixin padding-all($top: null, $right: null, $bottom: null, $left: null) {
+    padding: $top $right $bottom $left;
+}
+
+//Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+    margin-top: $top;
+    margin-right: $right;
+    margin-bottom: $bottom;
+    margin-left: $left;
+}
+
+@mixin margin-all($top: null, $right: null, $bottom: null, $left: null) {
+    margin: $top $right $bottom $left;
+}
+
+// Opacity
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// Strike heading mixin
+@mixin heading-strike($color) {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 20px 0px;
+    >span {
+        position: relative;
+        display: inline-block;
+        &:before,
+        &:after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 9999px;
+            height: 1px;
+            background: $color;
+        }
+        &:before {
+            right: 100%;
+            margin-right: 15px;
+        }
+        &:after {
+            left: 100%;
+            margin-left: 15px;
+        }
+    }
+}
+
+// Positioning Elements
+@mixin position($position: static, $top: auto, $right: auto, $bottom: auto, $left: auto) {
+    position: $position;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}

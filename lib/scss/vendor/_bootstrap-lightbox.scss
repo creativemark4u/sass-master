@@ -1,0 +1,128 @@
+// Bootstrap Lightbox Plugin SASS
+.ekko-lightbox {
+    &-container {
+        position: relative;
+        >div.ekko-lightbox-item {
+            width: 100%;
+            @include position(absolute, 0px, 0px, 0px, 0px);
+        }
+    }
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+    &-nav-overlay {
+        width: 100%;
+        height: 100%;
+        @include position(absolute, 0px, null, null, 0px);
+        @include display-flex;
+        z-index: 100;
+        a {
+            @extend .text-thirty;
+            @extend .white-color;
+            @include display-flex;
+            @include flex(1);
+            @include align-items(center);
+            @include opacity(0);
+            @include transition(opacity 0.5s);
+            z-index: 100;
+            span {
+                @extend .white-color;
+            }
+            >* {
+                @include flex-grow(1);
+                &:focus {
+                    outline: none;
+                }
+            }
+            span {
+                @extend .plr-thirty;
+            }
+            &:last-child span {
+                @extend .text-right;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+    a:hover {
+        text-decoration: none;
+        @include opacity(1);
+    }
+    .modal-dialog {
+        display: none;
+        .ekko-lightbox-loader {
+            >div {
+                >div {
+                    background-color: #333;
+                }
+            }
+        }
+    }
+    .modal-content {
+        @extend .add-border-radius;
+        @extend .addshadows;
+    }
+    .modal-body {
+        @extend .pd-fifteen;
+    }
+    .modal-footer {
+        @extend .text-left;
+        @extend .pd-fifteen;
+    }
+    &-loader {
+        width: 100%;
+        @include position(absolute, 0px, 0px, 0px, 0px);
+        @include display-flex;
+        /* establish flex container */
+        @include flex-direction(column);
+        /* make main axis vertical */
+        @include justify-content(center);
+        /* center items vertically, in this case */
+        @include align-items(center);
+        >div {
+            width: 40px;
+            height: 40px;
+            @extend .make-relative;
+            @extend .text-center;
+            >div {
+                width: 100%;
+                height: 100%;
+                @extend .white-bg;
+                @include position(absolute, 0px, 0px, 0px, 0px);
+                @include opacity(0.6);
+                @include border-radius-all(50%);
+                animation: sk-bounce 2s infinite ease-in-out;
+                &:last-child {
+                    animation-delay: -1s;
+                }
+            }
+        }
+    }
+}
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0);
+    }
+    50% {
+        -webkit-transform: scale(1);
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0);
+        -webkit-transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+    }
+}

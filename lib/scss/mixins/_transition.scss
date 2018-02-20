@@ -1,0 +1,8 @@
+// Endorsed Application Transition SASS Mixins
+@mixin transition($arguments) {
+    -webkit-transition: $arguments; // Chrome
+    -moz-transition: $arguments; // Mozilla
+    -ms-transition: $arguments; // Internet Explorer
+    -o-transition: $arguments; // Opera
+    transition: $arguments;
+}

@@ -1,0 +1,167 @@
+// Bootstrap Star Rating Plugin SASS
+.rating-loading {
+    width: 25px;
+    height: 25px;
+    font-size: 0;
+    color: $white-color;
+    background: transparent url('../img/loading.gif') top left no-repeat;
+    @include border-all(0px,
+    null,
+    null);
+}
+
+// Stars Input
+.rating-container {
+    display: inline-block;
+    .rating-stars {
+        position: relative;
+        cursor: pointer;
+        vertical-align: middle;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    .rating-input {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        font-size: 1px;
+        @include border-all(0px,
+        null,
+        null);
+        margin: 0px;
+        padding: 0px;
+        background: none;
+    }
+    .star {
+        display: inline-block;
+        text-align: center;
+        margin: 0px 2px;
+    }
+    .empty-stars {
+        color: $ed-link-color;
+    }
+    .filled-stars {
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin: auto;
+        color: $ed-link-color;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .clear-rating {
+        color: #aaa;
+        cursor: not-allowed;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 60%;
+    }
+    .clear-rating {
+        padding-right: 5px;
+    }
+    // Caption
+    .caption {
+        color: #999;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 60%;
+        margin-top: -0.6em;
+    }
+    // Caption
+    .caption {
+        margin-left: 5px;
+    }
+}
+
+.dark-star-rating {
+    .empty-stars,
+    .filled-stars {
+        color: $ed-text-color;
+    }
+}
+
+.rating-disabled {
+    .rating-input,
+    .rating-stars {
+        cursor: not-allowed;
+    }
+}
+
+.rating-rtl {
+    float: right;
+    .filled-stars {
+        left: auto;
+        right: 0;
+        -moz-transform: matrix(-1, 0, 0, 1, 0, 0) translate3d(0, 0, 0);
+        -webkit-transform: matrix(-1, 0, 0, 1, 0, 0) translate3d(0, 0, 0);
+        -o-transform: matrix(-1, 0, 0, 1, 0, 0) translate3d(0, 0, 0);
+        transform: matrix(-1, 0, 0, 1, 0, 0) translate3d(0, 0, 0);
+    }
+    // Caption
+    .caption {
+        margin-left: 0px;
+    }
+    &.is-star {
+        .filled-stars {
+            right: 0.06em;
+        }
+    }
+    &.is-heart {
+        .empty-stars {
+            margin-right: 0.07em;
+        }
+    }
+}
+
+.rating-animate {
+    .filled-stars {
+        transition: width 0.25s ease;
+        -o-transition: width 0.25s ease;
+        -moz-transition: width 0.25s ease;
+        -webkit-transition: width 0.25s ease;
+    }
+}
+
+// Sizes
+.rating-xl {
+    font-size: 4.89em;
+}
+
+.rating-lg {
+    font-size: 3.91em;
+}
+
+.rating-md {
+    font-size: 3.13em;
+}
+
+.rating-sm {
+    font-size: 2.5em;
+}
+
+.rating-xs {
+    font-size: 2em;
+}
+
+.rating-xl {
+    font-size: 4.89em;
+}
+
+// Clear
+.clear-rating-active {
+    cursor: pointer !important;
+    &:hover {
+        color: #843534;
+    }
+}
+
+// Print
+@media print {
+    .rating-container .clear-rating {
+        display: none;
+    }
+}

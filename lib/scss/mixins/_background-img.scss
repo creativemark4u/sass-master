@@ -1,0 +1,11 @@
+// Endorsed Application Background Image SASS Mixins
+@mixin ed-profile-header($background-color, $background-repeat, $background-position, $background-size, $banner-shadow) {
+    background-color: $background-color;
+    background-repeat: $background-repeat;
+    background-position: $background-position;
+    background-size: $background-size;
+    -webkit-background-size: $background-size;
+    -moz-background-size: $background-size;
+    -o-background-size: $background-size;
+    box-shadow: $banner-shadow;
+}

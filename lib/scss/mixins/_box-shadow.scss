@@ -1,0 +1,6 @@
+// Endorsed Application Box Shadow SASS Mixins
+@mixin box-shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}

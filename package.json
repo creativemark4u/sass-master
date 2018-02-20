@@ -1,0 +1,21 @@
+{
+  "name": "markscssproject",
+  "version": "1.0.0",
+  "description": "Project Description",
+  "main": "gulpfile.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1"
+  },
+  "devDependencies": {
+    "gulp-cssmin": "^0.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mukesh Pokhriyal",
+  "license": "ISC"
+}

@@ -1,0 +1,23 @@
+/*!
+ * jQuery UI Autocomplete 1.10.3
+ * http://jqueryui.com
+ *
+ * Copyright 2013 jQuery Foundation and other contributors
+ * Released under the MIT license.
+ * http://jquery.org/license
+ *
+ * http://docs.jquery.com/UI/Autocomplete#theming
+ */
+
+.ui-autocomplete {
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: default;
+	z-index: 1050;
+	max-height: 210px;
+	max-width: 300px;
+	overflow: hidden;
+	overflow-y:auto;
+}
+.ui-autocomplete-loading { background: #fff url("/assets/img/loading_verysmall.gif") 99% 50% no-repeat !important; transition: none!important; }
